@@ -12,7 +12,7 @@ export const userContext = createContext()
 export const billContext = createContext()
 
 
-const Screen2 = () => {
+const Screen2 = ({cartItem,showCart,cartDec}) => {
     let [bill ,setbill] = useState(0)
     let [cart,setcart] =useState(0)
 
@@ -20,27 +20,29 @@ const Screen2 = () => {
 
     let addb=()=>{
         setbill(bill+200)
-        setcart(cart+1)
+        cartItem()
     }
     let subb=()=>{
         setbill(bill-200)
-        setcart(cart-1)
+        cartDec()
     }
     let addf = ()=>{
         setbill(bill+100)
-        setcart(cart+1)
+        cartItem()
     }
     let subf=()=>{
         setbill(bill-100)
-        setcart(cart-1)
+        cartDec()
+
     }
     let addc = ()=>{
         setbill(bill+50)
-        setcart(cart+1)
+        cartItem()
     }
     let subc=()=>{
         setbill(bill-50)
-        setcart(cart-1)
+        cartDec()
+
     }
    
     console.log(bill)
@@ -48,16 +50,10 @@ const Screen2 = () => {
     return(
         <div>
             <userContext.Provider value={cart}>
-                <Screen1 cart = {cart} />
-
-                
             </userContext.Provider>
             <billContext.Provider value={bill}>
-                <Screen3 bill = {bill}/>
-            </billContext.Provider>
-
-            
-              <section id={style.main}>
+               {showCart && showCart ? <Screen3 bill = {bill}/> :
+                <section id={style.main}>
             
                 <article>
                     <div className={style.Menu}>
@@ -95,7 +91,9 @@ const Screen2 = () => {
                        
                     </div>                   
                 </article>
-              </section>
+              </section>} 
+            </billContext.Provider>
+             
 
 
         </div>

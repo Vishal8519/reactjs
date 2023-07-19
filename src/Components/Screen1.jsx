@@ -9,7 +9,7 @@ import { useContext, useState } from "react"
 import cart from "./Home"
 import { userContext} from "./Screen2"
 
-const Screen1 = (e) => {
+const Screen1 = ({cartCount,cartBill}) => {
     // let navigate = useNavigate()
     
     
@@ -23,7 +23,7 @@ const Screen1 = (e) => {
     // const bill = useContext(billContext)
 
     
-    console.log(cart)
+    console.log(cartCount)
     return(
         <div>
              <section id={style.nav}>
@@ -33,7 +33,7 @@ const Screen1 = (e) => {
                     <h2>Food's Restaurent</h2>
                     </div>
                     <div className={style.cart} >
-                    <Link to="/screen3"><h1><i class="fa-solid fa-cart-plus" style={{color:"white"} }></i><sup>{user}</sup> </h1></Link>
+                    <h1 onClick={() => cartBill()}><i class="fa-solid fa-cart-plus" style={{color:"white"} }></i>{cartCount}</h1>
                     </div>
                 </article>
               </section>
