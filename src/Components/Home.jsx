@@ -1,5 +1,5 @@
 import React from 'react'
-import style from "./screen1.module.css"
+import style from "./home.module.css"
 import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
@@ -11,9 +11,9 @@ const Home = () => {
           <section id={style.main}>
             <article>
               <div className={style.Menu}>
-                <h1>Welcome to Food's <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kitchen</h1> <br /><br />
+                <h1>Welcome to Food's <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kitchen</h1> <br /><br />
                 <div className={style.btn}>
-                 <button><Link to="/screen2">Go to menu</Link></button>
+                 <button><Link to="/screen2" >Go to menu</Link></button>
                 </div>
 
               </div>                   

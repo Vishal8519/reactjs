@@ -1,0 +1,60 @@
+/* home.module.css */
+
+/* Apply flexbox to center the content within the section */
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+/* Style the content inside the Menu */
+.Menu {
+  text-align: center; /* Center the text horizontally */
+  max-width: 600px; /* Limit the width of the content */
+}
+
+/* Style the title */
+.Menu h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+/* Style the button container */
+.btn {
+  margin-top: 20px;
+}
+
+/* Style the button */
+.btn button {
+  background-color: #3742fa;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase; /* Convert the text to uppercase */
+  text-decoration: none;
+}
+
+/* Add hover effect to the button */
+.btn button a:hover {
+  background-color: white;
+  color: black;
+  
+  
+}
+.btn button a{
+  text-shadow: #3742fa;
+  color: rgb(243, 243, 239);
+  text-decoration: none;
+
+}
+
