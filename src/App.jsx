@@ -44,3 +44,40 @@ const App=()=>{
     )
 }
 export default App
+
+// const App = () => {
+//     const [cartCount, setCartCount] = useState(0);
+//     const [showCart, setShowCart] = useState(false);
+
+//     const cartItem = () => {
+//         setCartCount(cartCount + 1);
+//     };
+
+//     const cartBill = () => {
+//         setShowCart(true);
+//     };
+
+//     const cartDec = () => {
+//         if (cartCount !== 0) {
+//             setCartCount(cartCount - 1);
+//         }
+//     };
+
+//     return (
+//         <div>
+//             <BrowserRouter>
+//                 <Screen1 cartCount={cartCount} cartBill={cartBill}></Screen1>
+//                 <Routes>
+//                     <Route path="/" element={<Home />} />
+//                     <Route
+//                         path="/screen2"
+//                         element={<Screen2 cartItem={cartItem} showCart={showCart} cartDec={cartDec} />}
+//                     />
+//                     {/* <Route path="/screen3" element={<Screen3/>}></Route> */}
+//                 </Routes>
+//             </BrowserRouter>
+//         </div>
+//     );
+// };
+
+// export default App;
