@@ -5,33 +5,38 @@ import Screen4 from "./Components/Screen4";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Nav from "./Nav";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { cartCountVal } from "./Components/utils";
 
 const App=()=>{
-    const [cartCount,setCartCount] = useState(0);
+    const[cartcount,setCartCount]=useState("0")
     const [showCart,setShowCart] = useState(false);
     const cartItem = () => {
-        setCartCount(cartCount+1);
+        setCartCount(cartcount+1);
     }
     const cartBill = () => {
         setShowCart(true);
     }
     const cartDec = () => {
-        if(cartCount != 0){
-            setCartCount(cartCount-1);
+        if(cartcount != 0){
+            setCartCount(cartcount-1);
         }
         
     }
+    useEffect(()=>{
+
+        cartCountVal(setCartCount)
+    },[])
     return(
         <div>
             
 
             <BrowserRouter>
             
-            <Screen1 cartCount={cartCount} cartBill={cartBill}></Screen1> 
+            <Screen1 cartcount={cartcount} cartBill={cartBill}></Screen1> 
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/screen2" element={<Screen2 cartItem={cartItem} showCart={showCart} cartDec={cartDec}/>}></Route>
+                <Route path="/screen2" element={<Screen2 cartItem={cartItem} showCart={showCart} cartDec={cartDec} setCartCount={setCartCount} cartcount={cartcount}/>}></Route>
                 {/* <Route path="/screen3" element={<Screen3/>}></Route> */}
             </Routes>
             

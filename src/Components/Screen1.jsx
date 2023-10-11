@@ -5,12 +5,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Screen2 from "./Screen2"
 import { Link, useNavigate } from "react-router-dom"
 import Home from "./Home"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import cart from "./Home"
 // import { userContext} from "./Screen2"
 import { userContext, billContext } from './Screen2'
+import { cartCountVal } from "./utils"
 
-const Screen1 = ({cartCount,cartBill}) => {
+const Screen1 = ({cartcount,cartBill}) => {
     // let navigate = useNavigate()
     
     
@@ -23,8 +24,6 @@ const Screen1 = ({cartCount,cartBill}) => {
     const user = useContext(userContext)
     // const bill = useContext(billContext)
 
-    
-    console.log(cartCount)
     return(
         <div>
              <section id={style.nav}>
@@ -34,7 +33,7 @@ const Screen1 = ({cartCount,cartBill}) => {
                     <h2>Food's Restaurent</h2>
                     </div>
                     <div className={style.cart} >
-                    <h1 onClick={() => cartBill()}><i class="fa-solid fa-cart-plus" style={{color:"white"} }></i>{cartCount}</h1>
+                    <h1 onClick={() => cartBill()}><i class="fa-solid fa-cart-plus" style={{color:"white"} }></i>{cartcount}</h1>
                     </div>
                 </article>
               </section>

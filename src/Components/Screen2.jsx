@@ -166,13 +166,14 @@
 // import React, { useState, useEffect } from 'react';
 import React, { useState, useEffect, createContext } from 'react';
 import style from "./screen2.module.css";
+import { cartCountVal } from './utils';
 
 const userContext = createContext();
 const billContext = createContext();
 
 export { userContext, billContext };
 
-const Screen2 = ({ cartItem, showCart, cartDec }) => {
+const Screen2 = ({ cartItem, showCart, cartDec,setCartCount,cartcount }) => {
     const [foodItems, setFoodItems] = useState([]);
     const [bill, setBill] = useState(0);
 
@@ -211,6 +212,7 @@ const Screen2 = ({ cartItem, showCart, cartDec }) => {
     
             if (response.ok) {
                 cartItem();
+                cartCountVal(setCartCount)
                 setBill(prevBill => prevBill + item.price);
             } else if (response.status === 404) {
                 console.error('Food item not found');
@@ -236,6 +238,7 @@ const Screen2 = ({ cartItem, showCart, cartDec }) => {
     
             if (response.ok) {
                 cartDec();
+                cartCountVal(setCartCount)
                 setBill(prevBill => prevBill - item.price);
             } else if (response.status === 404) {
                 console.error('Food item not found');
