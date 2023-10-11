@@ -33,8 +33,15 @@ const Screen1 = ({cartcount,cartBill}) => {
                     <h2>Food's Restaurent</h2>
                     </div>
                     <div className={style.cart} >
-                    <h1 onClick={() => cartBill()}><i class="fa-solid fa-cart-plus" style={{color:"white"} }></i>{cartcount}</h1>
+                    {/* <h1 onClick={() => cartBill()}><i class="fa-solid fa-cart-plus" style={{color:"white"} }></i>{cartcount}</h1> */}
+                    <Link to="/cart"> {/* Navigate to the cart screen */}
+                    <h1 onClick={() => cartBill()}>
+                        <i className="fa-solid fa-cart-plus" style={{ color: 'white' }}></i>
+                        {cartcount}
+                    </h1>
+                    </Link>
                     </div>
+                    
                 </article>
               </section>
 

@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import { cartCountVal } from "./Components/utils";
+import CartScreen from "./Components/CartScreen";
 
 const App=()=>{
     const[cartcount,setCartCount]=useState("0")
@@ -38,6 +39,7 @@ const App=()=>{
                 <Route path="/" element={<Home/>}/>
                 <Route path="/screen2" element={<Screen2 cartItem={cartItem} showCart={showCart} cartDec={cartDec} setCartCount={setCartCount} cartcount={cartcount}/>}></Route>
                 {/* <Route path="/screen3" element={<Screen3/>}></Route> */}
+                <Route path="/cart" element={<CartScreen></CartScreen>}></Route>
             </Routes>
             
             </BrowserRouter>
