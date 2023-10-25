@@ -224,6 +224,7 @@ const Screen2 = ({ cartItem, showCart, cartDec,setCartCount,cartcount }) => {
         }
     };
     
+    
     const subFood = async (item) => {
         try {
             const response = await fetch('https://food-kitchen-backend-ckae.vercel.app/api/remove-from-cart/', {
