@@ -1,6 +1,6 @@
 export const cartCountVal = async (setCartcount) => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/cart-count/", {
+    const response = await fetch("https://food-kitchen-backend-l4vd.vercel.app/api/cart-count/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

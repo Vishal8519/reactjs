@@ -11,7 +11,7 @@ const CartScreen = () => {
     useEffect(() => {
       const fetchCartItems = async () => {
         try {
-          const response = await axios.get('http://127.0.0.1:8000/api/cart-list/');
+          const response = await axios.get('https://food-kitchen-backend-ckae.vercel.app/api/cart-list/');
           setCartItems(response.data.cart_items);
           setTotalPrice(response.data.total_price);
         } catch (error) {
@@ -25,7 +25,6 @@ const CartScreen = () => {
     return (
         <div className={style.Cart}>
         <h1>Your Cart Items</h1>
-        <h2>Thanks for Choosing My Food Kitchen</h2>
         {cartItems.map((item) => (
           <div key={item.id} className={style['cart-item']}>
             <img src={item.food_item.image} alt={item.food_item.name} />

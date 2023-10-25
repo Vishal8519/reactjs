@@ -200,7 +200,7 @@ const Screen2 = ({ cartItem, showCart, cartDec,setCartCount,cartcount }) => {
 
     const addFood = async (item) => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/add-to-cart/', {
+            const response = await fetch('https://food-kitchen-backend-ckae.vercel.app/api/add-to-cart/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -226,7 +226,7 @@ const Screen2 = ({ cartItem, showCart, cartDec,setCartCount,cartcount }) => {
     
     const subFood = async (item) => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/remove-from-cart/', {
+            const response = await fetch('https://food-kitchen-backend-ckae.vercel.app/api/remove-from-cart/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
