@@ -50,56 +50,69 @@
 
 
 }
-
-#main > article >.Menu{
-
+#main > article > .Menu {
     height: 550px;
-    width: 70%;
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    margin-top: 35px;
-    
-  
-} 
-#main>article>.Menu>div{
-    /* border: 2px solid lightgray; */
+    width: 100%; /* Adjusted width for the carousel effect */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#main > article > .Menu > div {
     border: 2px solid lightgray;
-    margin-block: 15px;
-    margin-left: 15px;
-    
+    margin: 15px;
+    display: inline-block;
+    vertical-align: top;
+    width: 250px; /* Adjusted width for each carousel item */
+    transition: transform 0.3s ease; /* Added transition for smooth effect */
 }
-#main>article>.Menu>div>h2{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    font-weight: 600;
 
-
-}
-#main>article>.Menu>div>h4{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    font-weight: lighter;
-
-}
-#main>article>.Menu>div>.add{
+/* Adjusted styling for the carousel navigation buttons */
+#main > article > .Menu > .add, #main > article > .Menu > .sub {
     height: 30px;
-    width: 60px;
-    margin-right: 5px;
+    width: 30px;
     color: lightgrey;
     background-color: blue;
     border: none;
-    border-radius: 2px;
-    margin-left: 10px;
+    border-radius: 50%;
     font-weight: bold;
     font-size: 15px;
 }
-#main>article>.Menu>div>.sub{
-    height: 30px;
-    width: 60px;
-    color: black;
+
+#main > article > .Menu > .sub {
     background-color: lightgrey;
-    border: none;
-    border-radius: 2px;
-    font-weight: bold;
-    font-size: 15px;
+    color: black;
 }
+
+/* Added hover effect for carousel navigation buttons */
+#main > article > .Menu > .add:hover, #main > article > .Menu > .sub:hover {
+    cursor: pointer;
+    background-color: darkblue;
+}
+
+/* Added hover effect for carousel items */
+#main > article > .Menu > div:hover {
+    transform: scale(1.05); /* Adjusted hover effect */
+}
+
+/* Added CSS animations for carousel sliding effect */
+@keyframes carousel-slide {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(-200%);
+    }
+    60% {
+        transform: translateX(-300%);
+    }
+    80% {
+        transform: translateX(-400%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+

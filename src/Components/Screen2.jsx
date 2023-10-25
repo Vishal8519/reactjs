@@ -183,7 +183,7 @@ const Screen2 = ({ cartItem, showCart, cartDec,setCartCount,cartcount }) => {
 
     const fetchFoodItems = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/food-items/');
+            const response = await fetch('https://food-kitchen-backend-ckae.vercel.app/api/food-items/');
             const data = await response.json();
 
             // Append base URL to image URLs
