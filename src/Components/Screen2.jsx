@@ -189,7 +189,7 @@ const Screen2 = ({ cartItem, showCart, cartDec,setCartCount,cartcount }) => {
             // Append base URL to image URLs
             const foodItemsWithFullImageURLs = data.map(item => ({
                 ...item,
-                image: `http://127.0.0.1:8000${item.image}`,
+                image: `https://food-kitchen-backend.vercel.app/media/food_images/{item.image}`,
             }));
 
             setFoodItems(foodItemsWithFullImageURLs);
