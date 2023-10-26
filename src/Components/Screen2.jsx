@@ -191,6 +191,7 @@ const Screen2 = ({ cartItem, showCart, cartDec,setCartCount,cartcount }) => {
                 ...item,
                 image: `https://food-kitchen-backend.vercel.app/media/food_images/{item.image}`,
             }));
+            console.log("'''''''''" , foodItemsWithFullImageURLs)
 
             setFoodItems(foodItemsWithFullImageURLs);
         } catch (error) {
